@@ -1,0 +1,215 @@
+/* ==========================================
+   ESTILOS GENERALES & FONDO DINÁMICO ANIMADO
+   ========================================== */
+@import url('https://googleapis.com');
+
+body {
+    background-color: #111116;
+    /* Fondo base con degradado de cine y textura granulada */
+    background-image: 
+        radial-gradient(circle at 50% 30%, rgba(28, 28, 36, 0.9) 0%, rgba(13, 13, 17, 0.95) 100%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
+    color: #e5e5e5;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 30px 20px;
+    line-height: 1.6;
+    text-align: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Animación de siluetas de focos de estudio flotando en el fondo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.03; /* Sutil patrón de fondo */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='120' height='120' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z'/%3E%3C/svg%3E"); /* Focos simplificados en patrón */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='120' height='120' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 14c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z'/%3E%3C/svg%3E"); /* Focos e iluminación */
+    background-size: 240px 240px;
+    animation: moverIluminacion 55s linear infinite;
+    filter: blur(1.5px);
+}
+
+@keyframes moverIluminacion {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50%, -30px); }
+}
+
+center {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* ==========================================
+   SÚPER TÍTULOS GIGANTES CON NUEVO TEXTO
+   ========================================== */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.9);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* 1. TÍTULO PRINCIPAL (Iluminación) */
+body > h1, 
+body > center > h1 {
+    font-size: 4.5rem; /* Tamaño masivo IMAX */
+    font-weight: 900;
+    color: #ffffff;
+    border-bottom: 4px solid #e50914;
+    display: inline-block;
+    padding-bottom: 15px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    letter-spacing: 4px;
+}
+
+/* Reemplazar el texto original de "Iluminacion" por uno más profesional */
+body > h1 center strong,
+body > center > h1 strong {
+    visibility: hidden;
+    font-size: 0;
+}
+body > h1 center strong::after,
+body > center > h1 strong::after {
+    content: "ILUMINACIÓN DE ESTUDIO";
+    visibility: visible;
+    font-size: 4.5rem;
+}
+
+/* 2. SUBTÍTULOS DE CADA PRODUCTO */
+h1[align="center"] {
+    font-size: 0 !important; /* Oculta los textos antiguos del HTML */
+    margin-top: 90px;
+    margin-bottom: 15px;
+}
+
+h1[align="center"]::after {
+    font-size: 2.8rem !important;
+    font-weight: 800;
+    display: block;
+    background: linear-gradient(to right, #ffffff, #a1a1a1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Textos totalmente nuevos y épicos para los focos */
+h1[align="center"]:nth-of-type(2)::after {
+    content: "💡 Foco Bicolor 150W · Control DMX";
+}
+
+h1[align="center"]:nth-of-type(3)::after {
+    content: "☀️ Kit Softbox LED · Luz de Ventana Suave";
+}
+
+h1[align="center"]:nth-of-type(4)::after {
+    content: "🎬 Panel LED Video · Iluminación On-Camera";
+}
+
+/* ==========================================
+   PRODUCTOS (IMÁGENES)
+   ========================================== */
+img {
+    max-width: 80%;
+    max-height: 420px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    margin: 25px auto;
+    display: block;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 50px rgba(229, 9, 20, 0.35);
+}
+
+/* Logo superior izquierdo fijo en su sitio */
+img[src*="LogHead.png"] {
+    filter: invert(1) brightness(2);
+    box-shadow: none;
+    margin: 0;
+    height: 60px;
+    display: inline;
+    float: left;
+}
+
+img[src*="LogHead.png"]:hover {
+    transform: none;
+}
+
+body::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ==========================================
+   BOTONES DE COMPRA ESTILIZADOS
+   ========================================== */
+table {
+    border-collapse: collapse !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    margin: 15px auto !important;
+    display: table;
+}
+
+td {
+    border: none !important;
+    padding: 0 !important;
+    text-align: center;
+}
+
+table a {
+    display: inline-block;
+    padding: 14px 35px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    min-width: 220px;
+    text-align: center;
+}
+
+/* Botón "Comprar aquí" (Rojo Cine Premium) */
+table a[href*=".html"] {
+    background-color: #e50914;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+}
+
+table a[href*=".html"]:hover {
+    background-color: #b80710;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.6);
+}
+
+/* Botón "Comprar en Amazon" (Naranja Amazon Corporativo) */
+table a[href*="amazon"] {
+    background-color: #ff9900;
+    color: #111116 !important;
+    box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+}
+
+table a[href*="amazon"]:hover {
+    background-color: #e68a00;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 153, 0, 0.5);
+}
