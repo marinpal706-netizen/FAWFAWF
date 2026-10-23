@@ -1,0 +1,215 @@
+/* ==========================================
+   ESTILOS GENERALES & FONDO DE CELULOIDE
+   ========================================== */
+@import url('https://googleapis.com');
+
+body {
+    background-color: #111116;
+    /* Fondo con textura granulada de cine y foco de luz radial */
+    background-image: 
+        radial-gradient(circle at 50% 30%, rgba(28, 28, 36, 0.9) 0%, rgba(13, 13, 17, 0.95) 100%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
+    color: #e5e5e5;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+center {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* ==========================================
+   TÍTULOS ESTILO CARTELERA GIGANTE
+   ========================================== */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    margin: 20px auto;
+}
+
+/* Título de la cámara */
+h1[align="center"] {
+    font-size: 3.5rem !important;
+    font-weight: 900;
+    background: linear-gradient(to right, #ffffff, #b5b5b5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 3px;
+}
+
+/* Título de la sección de compra */
+#Contacto center {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    border-bottom: 3px solid #e50914;
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-top: 40px;
+}
+
+/* Subtítulo informativo */
+p center {
+    font-size: 1.1rem;
+    color: #bcbcbc;
+    margin-bottom: 30px;
+}
+
+/* ==========================================
+   IMAGEN DEL PRODUCTO PREMIUM
+   ========================================== */
+img {
+    max-width: 90%;
+    max-height: 450px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.9);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin: 20px auto;
+}
+
+img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 25px 60px rgba(229, 9, 20, 0.2);
+}
+
+/* ==========================================
+   TARJETA FLOTANTE DE PRECIO
+   ========================================== */
+table {
+    border-collapse: collapse !important;
+    border: none !important;
+    background: linear-gradient(135deg, #1f1f27 0%, #15151c 100%) !important;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+    margin: 20px auto !important;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+td {
+    border: none !important;
+    padding: 15px 40px !important;
+}
+
+/* Texto del precio gigante dentro de la tabla */
+td h1 {
+    font-size: 3rem !important;
+    font-weight: 900;
+    color: #e50914 !important; /* Rojo corporativo */
+    margin: 0;
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px rgba(229, 9, 20, 0.2);
+}
+
+/* ==========================================
+   PASARELA DE COMPRA (FORMULARIO)
+   ========================================== */
+.formulario-contacto {
+    background-color: #1f1f27;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.formulario-contacto p {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.formulario-contacto label {
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* Campos de entrada de datos */
+.formulario-contacto input[type="text"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #111116;
+    border: 1px solid #333344;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin-top: 8px;
+    transition: all 0.3s ease;
+}
+
+.formulario-contacto input[type="text"]:focus {
+    border-color: #e50914;
+    box-shadow: 0 0 12px rgba(229, 9, 20, 0.3);
+    outline: none;
+    background-color: #15151c;
+}
+
+/* Contenedor de botones del formulario */
+.formulario-contacto p:last-of-type {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    margin-bottom: 0;
+}
+
+/* Botón de confirmación (Comprar) */
+.boton-rojo {
+    background-color: #e50914;
+    color: #ffffff !important;
+    padding: 14px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 2; /* Hace el botón de compra más ancho */
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+}
+
+.boton-rojo:hover {
+    background-color: #b80710;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.6);
+}
+
+/* Botón de reset (Borrar formulario) */
+.boton-gris {
+    background-color: #3e3e4a;
+    color: #d1d1d1;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+}
+
+.boton-gris:hover {
+    background-color: #4f4f5e;
+    color: #ffffff;
+}

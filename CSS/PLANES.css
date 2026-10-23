@@ -1,0 +1,124 @@
+/* ==========================================================================
+   ESTILOS GENERALES Y FONDO ESPACIAL (CINE JAVI - PLANES)
+   ========================================================================== */
+
+/* Tu fondo original azul con espacio profundo */
+body {
+    background-color: #0b0b16 !important;
+    color: #ffffff !important;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Títulos principales con tu color rojo de cine */
+h1 {
+    color: #e50914;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 30px;
+}
+
+/* Centrado de la imagen del plan */
+img {
+    display: block;
+    margin: 20px auto;
+    max-height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(229, 9, 20, 0.3);
+}
+
+/* ==========================================================================
+   ESTRUCTURA DE FILAS CON EL BOTÓN A LA DERECHA
+   ========================================================================== */
+
+/* Contenedor principal de la lista */
+ol {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espacio entre bloques */
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 0;
+    list-style: none; /* Quitamos los números */
+}
+
+/* Cada apartado se convierte en una fila flexible */
+ol > li {
+    display: flex;
+    justify-content: space-between; /* Empuja el botón al extremo derecho */
+    align-items: center; /* Centra verticalmente el texto y el botón */
+    background: rgba(255, 255, 255, 0.03); /* Tu efecto cristal original */
+    backdrop-filter: blur(5px);
+    padding: 25px 35px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Caja de texto interior */
+ol > li > div {
+    flex: 1;
+    text-align: left;
+    padding-right: 30px;
+}
+
+/* Títulos de categorías dentro de las filas */
+ol > li strong {
+    display: block;
+    font-size: 1.25rem;
+    color: #4fa9ff; /* Tu color azul claro original para destacar las letras */
+    margin-bottom: 10px;
+}
+
+/* Listas internas de beneficios */
+ul {
+    list-style-type: "🎬 ";
+    padding-left: 20px;
+    margin: 0;
+}
+
+ul li {
+    font-weight: normal;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+    margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   BOTÓN DE COMPRAR INTERACTIVO A LA DERECHA
+   ========================================================================== */
+
+/* Tu tabla original convertida en botón rojo de cine */
+table {
+    margin: 0 !important; /* Reseteamos margen para alinearlo a la derecha */
+    background-color: #e50914; /* Tu rojo original */
+    border: none !important;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    flex-shrink: 0; /* Evita que el botón se deforme */
+}
+
+table:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(229, 9, 20, 0.6);
+}
+
+table td {
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* El enlace de Comprar ocupando todo el espacio del botón */
+table td a {
+    display: block;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 12px 30px;
+    text-transform: uppercase;
+}
